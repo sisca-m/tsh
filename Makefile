@@ -1,13 +1,3 @@
-##
-## Makefile for Makefile in /home/roche_g/PSU_2015_lemipc
-## 
-## Made by 
-## Login   <roche_g@epitech.net>
-## 
-## Started on  Thu Mar 17 15:08:58 2016 
-## Last update Sun Apr 24 00:26:42 2016 Guillaume roche
-##
-
 CC	=	gcc
 
 EXT	=	c
@@ -43,7 +33,7 @@ $(OBJDIR):
 
 $(OBJDIR)/%.o:	%.$(EXT)
 		-@echo -n Compilation of $< ...
-		@$(CC) -o $@ -c $< $(CFLAGS);
+		@$(CC) -o $@ -c $< $(CFLAGS)
 		-@echo " [OK]"
 
 clean:

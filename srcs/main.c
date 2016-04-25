@@ -1,4 +1,5 @@
 /*
+    Made by ftsn.
     This file is part of ftsh.
 
     ftsh is free software: you can redistribute it and/or modify it
