@@ -14,8 +14,34 @@
     along with ftsh.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-int	main(int ac, char **av)
+#include <stdio.h>
+#include "ftsh.h"
+
+static void	init(char **env)
 {
+  app.env = new(_array, env, 0, 0);
+  app.env->dump(app.env);
+}
+
+static void	ending(void)
+{
+  delete(app.env);
+}
+
+int		main(int ac, char **av, char **env)
+{
+  char		*var;
+  t_container	*splited;
+  t_String	*str;
+
+  init(env);
+  printf("%s\n", dynamic_getenv("PATH"));
+  str = new(_string, dynamic_getenv("PATH"), 0);
+  splited = str->split(str, _array, ":");
+  splited->dump(splited);
+  delete(str);
+  delete(splited);
+  ending();
   (void)ac;
   (void)av;
   return (0);

@@ -1,0 +1,119 @@
+\hypertarget{list__design_8h}{}\section{includes/lists/list\+\_\+design.h File Reference}
+\label{list__design_8h}\index{includes/lists/list\+\_\+design.\+h@{includes/lists/list\+\_\+design.\+h}}
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container\+\_\+design.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}array\+\_\+design.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__list}{s\+\_\+list}
+\begin{DoxyCompactList}\small\item\em List class. \end{DoxyCompactList}\item 
+struct \hyperlink{structs__list__data}{s\+\_\+list\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Linked list structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{container__design_8h_a3d3580435dace156582f80510cbf0256}{t\+\_\+\+Array} $\ast$($\ast$ {\bfseries t\+\_\+to\+\_\+array}) (\hyperlink{container__design_8h_a2baa2855e4617ebc7ad317f13fda1cbe}{t\+\_\+container} $\ast$self)\hypertarget{list__design_8h_a2b0a367d2a3f7e32cde76436954cf91b}{}\label{list__design_8h_a2b0a367d2a3f7e32cde76436954cf91b}
+
+\item 
+typedef struct \hyperlink{structs__list__data}{s\+\_\+list\+\_\+data} \hyperlink{list__design_8h_a36a1af2b742ad9ec3f53f0f14806772a}{t\+\_\+list\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Linked list structure. \end{DoxyCompactList}\item 
+typedef \hyperlink{container__design_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list} \hyperlink{list__design_8h_a2e3c83b1ba34261f08f2d3e889472464}{t\+\_\+spl\+\_\+list}\hypertarget{list__design_8h_a2e3c83b1ba34261f08f2d3e889472464}{}\label{list__design_8h_a2e3c83b1ba34261f08f2d3e889472464}
+
+\begin{DoxyCompactList}\small\item\em No circular simple linked-\/list. \end{DoxyCompactList}\item 
+typedef \hyperlink{container__design_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list} \hyperlink{list__design_8h_a93ba80f761c72efbc37d97f03f26e094}{t\+\_\+spl\+\_\+clist}\hypertarget{list__design_8h_a93ba80f761c72efbc37d97f03f26e094}{}\label{list__design_8h_a93ba80f761c72efbc37d97f03f26e094}
+
+\begin{DoxyCompactList}\small\item\em Circular simple linked-\/list. \end{DoxyCompactList}\item 
+typedef \hyperlink{container__design_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list} \hyperlink{list__design_8h_aa47817e1b8b9d75a4fdf5f0e34fe3075}{t\+\_\+dbl\+\_\+list}\hypertarget{list__design_8h_aa47817e1b8b9d75a4fdf5f0e34fe3075}{}\label{list__design_8h_aa47817e1b8b9d75a4fdf5f0e34fe3075}
+
+\begin{DoxyCompactList}\small\item\em No ircular doubly linked-\/list. \end{DoxyCompactList}\item 
+typedef \hyperlink{container__design_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list} \hyperlink{list__design_8h_a39f7f3b0f11b8b259c42214d9e07b168}{t\+\_\+dbl\+\_\+clist}\hypertarget{list__design_8h_a39f7f3b0f11b8b259c42214d9e07b168}{}\label{list__design_8h_a39f7f3b0f11b8b259c42214d9e07b168}
+
+\begin{DoxyCompactList}\small\item\em Circular doubly linked-\/list. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{list__design_8h_a1b8bc93f0e5c702e2a8ff0f202b96115}{e\+\_\+list\+\_\+type} \hyperlink{list__design_8h_acf6abb482916618710b760e82e1b1109}{t\+\_\+list\+\_\+type}\hypertarget{list__design_8h_acf6abb482916618710b760e82e1b1109}{}\label{list__design_8h_acf6abb482916618710b760e82e1b1109}
+
+\begin{DoxyCompactList}\small\item\em Type of linked-\/list. Used in interns functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{list__design_8h_a1b8bc93f0e5c702e2a8ff0f202b96115}{e\+\_\+list\+\_\+type} \{ {\bfseries S\+I\+M\+P\+LE} = 0, 
+{\bfseries C\+I\+R\+C\+\_\+\+S\+I\+M\+P\+LE}, 
+{\bfseries D\+O\+U\+B\+LE}, 
+{\bfseries C\+I\+R\+C\+\_\+\+D\+O\+U\+B\+LE}
+ \}\hypertarget{list__design_8h_a1b8bc93f0e5c702e2a8ff0f202b96115}{}\label{list__design_8h_a1b8bc93f0e5c702e2a8ff0f202b96115}
+\begin{DoxyCompactList}\small\item\em Type of linked-\/list. Used in interns functions. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries list\+\_\+add} (\hyperlink{list__design_8h_a36a1af2b742ad9ec3f53f0f14806772a}{t\+\_\+list\+\_\+data} $\ast$$\ast$list, void $\ast$data, int pos, \hyperlink{list__design_8h_acf6abb482916618710b760e82e1b1109}{t\+\_\+list\+\_\+type} type)\hypertarget{list__design_8h_aaec23510889d735a6d7b437ab1a90c82}{}\label{list__design_8h_aaec23510889d735a6d7b437ab1a90c82}
+
+\item 
+void {\bfseries list\+\_\+del} (\hyperlink{list__design_8h_a36a1af2b742ad9ec3f53f0f14806772a}{t\+\_\+list\+\_\+data} $\ast$$\ast$list, int pos, \hyperlink{list__design_8h_acf6abb482916618710b760e82e1b1109}{t\+\_\+list\+\_\+type} type)\hypertarget{list__design_8h_a8e239478cf8cfcaab6dce2935526f825}{}\label{list__design_8h_a8e239478cf8cfcaab6dce2935526f825}
+
+\item 
+void {\bfseries list\+\_\+print} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list)\hypertarget{list__design_8h_aef81933c6225b18dc6345c1a965987e7}{}\label{list__design_8h_aef81933c6225b18dc6345c1a965987e7}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries list\+\_\+end} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list)\hypertarget{list__design_8h_ae342d4aeef84954d84b27c922cb63619}{}\label{list__design_8h_ae342d4aeef84954d84b27c922cb63619}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries list\+\_\+front} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list)\hypertarget{list__design_8h_ac71adf1312314da1cdaa085f177bb63b}{}\label{list__design_8h_ac71adf1312314da1cdaa085f177bb63b}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries list\+\_\+at} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, size\+\_\+t pos)\hypertarget{list__design_8h_a5e9ad1a43757288245f71eac398e932c}{}\label{list__design_8h_a5e9ad1a43757288245f71eac398e932c}
+
+\item 
+int {\bfseries spl\+\_\+list\+\_\+add} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, void $\ast$data, int pos)\hypertarget{list__design_8h_a9509061d7619cfbc4f98ffa0d558fbb6}{}\label{list__design_8h_a9509061d7619cfbc4f98ffa0d558fbb6}
+
+\item 
+int {\bfseries spl\+\_\+list\+\_\+del} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, int pos)\hypertarget{list__design_8h_a1e3b7b896c7ec53add86004ec9e8948a}{}\label{list__design_8h_a1e3b7b896c7ec53add86004ec9e8948a}
+
+\item 
+int {\bfseries spl\+\_\+clist\+\_\+add} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, void $\ast$data, int pos)\hypertarget{list__design_8h_a8c07eff023c4cae4321b32674d2dd0db}{}\label{list__design_8h_a8c07eff023c4cae4321b32674d2dd0db}
+
+\item 
+int {\bfseries spl\+\_\+clist\+\_\+del} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, int pos)\hypertarget{list__design_8h_a26f09b29cb6628ec7cdb0dccf80d196b}{}\label{list__design_8h_a26f09b29cb6628ec7cdb0dccf80d196b}
+
+\item 
+int {\bfseries dbl\+\_\+list\+\_\+add} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, void $\ast$data, int pos)\hypertarget{list__design_8h_aa5615dfe3ae95b49ecf1df62841a18d8}{}\label{list__design_8h_aa5615dfe3ae95b49ecf1df62841a18d8}
+
+\item 
+int {\bfseries dbl\+\_\+list\+\_\+del} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, int pos)\hypertarget{list__design_8h_abbab2b56d890edde60622625175ff187}{}\label{list__design_8h_abbab2b56d890edde60622625175ff187}
+
+\item 
+int {\bfseries dbl\+\_\+clist\+\_\+add} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, void $\ast$data, int pos)\hypertarget{list__design_8h_a39ca7705d4b99b0a01e818322a5a48d9}{}\label{list__design_8h_a39ca7705d4b99b0a01e818322a5a48d9}
+
+\item 
+int {\bfseries dbl\+\_\+clist\+\_\+del} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$list, int pos)\hypertarget{list__design_8h_a9d17d111fe8f033d7ada593459b0b096}{}\label{list__design_8h_a9d17d111fe8f033d7ada593459b0b096}
+
+\item 
+\hyperlink{container__design_8h_a3d3580435dace156582f80510cbf0256}{t\+\_\+\+Array} $\ast$ {\bfseries list\+\_\+to\+\_\+array} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{list__design_8h_a1266d4974e86d01dac190729a270028e}{}\label{list__design_8h_a1266d4974e86d01dac190729a270028e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{list__design_8h_a85b77cd6d9ee9350fc069a60543589fb}{\+\_\+spl\+\_\+list}\hypertarget{list__design_8h_a85b77cd6d9ee9350fc069a60543589fb}{}\label{list__design_8h_a85b77cd6d9ee9350fc069a60543589fb}
+
+\begin{DoxyCompactList}\small\item\em No circular simple linked-\/list description variable. \end{DoxyCompactList}\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{list__design_8h_a97f2fe3bd2510384cf01549a8eab02fe}{\+\_\+spl\+\_\+clist}\hypertarget{list__design_8h_a97f2fe3bd2510384cf01549a8eab02fe}{}\label{list__design_8h_a97f2fe3bd2510384cf01549a8eab02fe}
+
+\begin{DoxyCompactList}\small\item\em Circular simple linked-\/list description variable. \end{DoxyCompactList}\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{list__design_8h_ac0f4203ecb1853f7a7d6c9c7a05ceb5e}{\+\_\+dbl\+\_\+list}\hypertarget{list__design_8h_ac0f4203ecb1853f7a7d6c9c7a05ceb5e}{}\label{list__design_8h_ac0f4203ecb1853f7a7d6c9c7a05ceb5e}
+
+\begin{DoxyCompactList}\small\item\em No circular doubly linked-\/list description variable. \end{DoxyCompactList}\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{list__design_8h_a6a800b76edb909ecae3fc2763f076778}{\+\_\+dbl\+\_\+clist}\hypertarget{list__design_8h_a6a800b76edb909ecae3fc2763f076778}{}\label{list__design_8h_a6a800b76edb909ecae3fc2763f076778}
+
+\begin{DoxyCompactList}\small\item\em Circular doubly linked-\/list description variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{list\+\_\+design.\+h@{list\+\_\+design.\+h}!t\+\_\+list\+\_\+data@{t\+\_\+list\+\_\+data}}
+\index{t\+\_\+list\+\_\+data@{t\+\_\+list\+\_\+data}!list\+\_\+design.\+h@{list\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+list\+\_\+data}{t\_list\_data}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf s\+\_\+list\+\_\+data}			 {\bf t\+\_\+list\+\_\+data}}\hypertarget{list__design_8h_a36a1af2b742ad9ec3f53f0f14806772a}{}\label{list__design_8h_a36a1af2b742ad9ec3f53f0f14806772a}
+
+
+Linked list structure. 
+
+Basic linked-\/list. Can be \mbox{[}circular and / or doubly\mbox{]} or not 

@@ -1,0 +1,109 @@
+\hypertarget{iterator__design_8h}{}\section{includes/iterators/iterator\+\_\+design.h File Reference}
+\label{iterator__design_8h}\index{includes/iterators/iterator\+\_\+design.\+h@{includes/iterators/iterator\+\_\+design.\+h}}
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container\+\_\+design.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__iter}{s\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em Random access iterator class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{iterator__design_8h_a1203fd2ea75505f64e67a2dbcff915df}{t\+\_\+it\+\_\+access}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function which put an iterator to an implementation function defined position. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{iterator__design_8h_aff9751abfeb4ef33ddad4f4ac04c0dd9}{t\+\_\+it\+\_\+rand\+\_\+access}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int pos)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function which put an iterator to a given position. \end{DoxyCompactList}\item 
+typedef \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$($\ast$ \hyperlink{iterator__design_8h_adc42acf2aeeeb2b9f67224f698a3d82f}{t\+\_\+rvalue}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function which put an iterator to an implementation function defined position. \end{DoxyCompactList}\item 
+typedef \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$($\ast$ \hyperlink{iterator__design_8h_af8d5717881e10aa4ca524c87564a9434}{t\+\_\+access\+\_\+val}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int pos)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function which put an iterator to a given position then returning what is stored there. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries incr} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{iterator__design_8h_ad103713906c1e29917b256c895921659}{}\label{iterator__design_8h_ad103713906c1e29917b256c895921659}
+
+\item 
+void {\bfseries decr} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{iterator__design_8h_acb5e9238a5970b152090b62e4528083a}{}\label{iterator__design_8h_acb5e9238a5970b152090b62e4528083a}
+
+\item 
+void {\bfseries jump} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int pos)\hypertarget{iterator__design_8h_a0fcc96e0e3b2571f00dea23e91c8c84d}{}\label{iterator__design_8h_a0fcc96e0e3b2571f00dea23e91c8c84d}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries rvalue} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{iterator__design_8h_a4c22a7748763056415423df2465d0a4e}{}\label{iterator__design_8h_a4c22a7748763056415423df2465d0a4e}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries jmp\+\_\+rvalue} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int pos)\hypertarget{iterator__design_8h_aab4019f05be0fcf5599a6adde3f8ffcb}{}\label{iterator__design_8h_aab4019f05be0fcf5599a6adde3f8ffcb}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{iterator__design_8h_a9bf57d5a861d903ab2b0190a93aa383c}{\+\_\+it}\hypertarget{iterator__design_8h_a9bf57d5a861d903ab2b0190a93aa383c}{}\label{iterator__design_8h_a9bf57d5a861d903ab2b0190a93aa383c}
+
+\begin{DoxyCompactList}\small\item\em Iterator class description variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}!t\+\_\+access\+\_\+val@{t\+\_\+access\+\_\+val}}
+\index{t\+\_\+access\+\_\+val@{t\+\_\+access\+\_\+val}!iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+access\+\_\+val}{t\_access\_val}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Object}$\ast$($\ast$ t\+\_\+access\+\_\+val) ({\bf Object} $\ast$self, int pos)}\hypertarget{iterator__design_8h_af8d5717881e10aa4ca524c87564a9434}{}\label{iterator__design_8h_af8d5717881e10aa4ca524c87564a9434}
+
+
+Function pointer which represents a member function which put an iterator to a given position then returning what is stored there. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns what is stored at the new position which points the iterator. 
+\end{DoxyReturn}
+\index{iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}!t\+\_\+it\+\_\+access@{t\+\_\+it\+\_\+access}}
+\index{t\+\_\+it\+\_\+access@{t\+\_\+it\+\_\+access}!iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+it\+\_\+access}{t\_it\_access}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ t\+\_\+it\+\_\+access) ({\bf Object} $\ast$self)}\hypertarget{iterator__design_8h_a1203fd2ea75505f64e67a2dbcff915df}{}\label{iterator__design_8h_a1203fd2ea75505f64e67a2dbcff915df}
+
+
+Function pointer which represents a member function which put an iterator to an implementation function defined position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. 
+\end{DoxyReturn}
+\index{iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}!t\+\_\+it\+\_\+rand\+\_\+access@{t\+\_\+it\+\_\+rand\+\_\+access}}
+\index{t\+\_\+it\+\_\+rand\+\_\+access@{t\+\_\+it\+\_\+rand\+\_\+access}!iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+it\+\_\+rand\+\_\+access}{t\_it\_rand\_access}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ t\+\_\+it\+\_\+rand\+\_\+access) ({\bf Object} $\ast$self, int pos)}\hypertarget{iterator__design_8h_aff9751abfeb4ef33ddad4f4ac04c0dd9}{}\label{iterator__design_8h_aff9751abfeb4ef33ddad4f4ac04c0dd9}
+
+
+Function pointer which represents a member function which put an iterator to a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. \\
+\hline
+{\em pos} & The new position of the iterator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. 
+\end{DoxyReturn}
+\index{iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}!t\+\_\+rvalue@{t\+\_\+rvalue}}
+\index{t\+\_\+rvalue@{t\+\_\+rvalue}!iterator\+\_\+design.\+h@{iterator\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+rvalue}{t\_rvalue}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Object}$\ast$($\ast$ t\+\_\+rvalue) ({\bf Object} $\ast$self)}\hypertarget{iterator__design_8h_adc42acf2aeeeb2b9f67224f698a3d82f}{}\label{iterator__design_8h_adc42acf2aeeeb2b9f67224f698a3d82f}
+
+
+Function pointer which represents a member function which put an iterator to an implementation function defined position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns what is stored at the position which points the iterator. 
+\end{DoxyReturn}

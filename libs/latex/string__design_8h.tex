@@ -1,0 +1,184 @@
+\hypertarget{string__design_8h}{}\section{includes/strings/string\+\_\+design.h File Reference}
+\label{string__design_8h}\index{includes/strings/string\+\_\+design.\+h@{includes/strings/string\+\_\+design.\+h}}
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}container\+\_\+design.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__String}{s\+\_\+\+String}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$($\ast$ \hyperlink{string__design_8h_a142918c94b762406f529a28ebe7c1be5}{t\+\_\+dup}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning memory allocated copy of something. Like strdup() for {\ttfamily char $\ast$} in the libC. \end{DoxyCompactList}\item 
+typedef size\+\_\+t($\ast$ \hyperlink{string__design_8h_aeac100a52d95b7dd0a45b6492d65af6e}{t\+\_\+str\+\_\+findstr}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$substr)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning the first position at which a substring was found in an {\ttfamily  \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}}. Like find() for strings. \end{DoxyCompactList}\item 
+typedef size\+\_\+t($\ast$ \hyperlink{string__design_8h_a12a4daaa53dc2aa57a69c6afb297c60a}{t\+\_\+str\+\_\+find}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int c)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning the first position at which a char was found in an {\ttfamily  \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}}. Like find() for strings. \end{DoxyCompactList}\item 
+typedef \hyperlink{bool_8h_ab719d996d8c101c34248bc256b8dcfd8}{t\+\_\+bool}($\ast$ \hyperlink{string__design_8h_ac0a7451e5fdf3aab95e263597d8cf23f}{t\+\_\+str\+\_\+match}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$compare)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning a boolean telling if an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} matches a pattern. Kind of regexp for poors. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{string__design_8h_a58da945c23dccd4ef1e579a0366ecf3a}{t\+\_\+str\+\_\+nmatch}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$compare)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning the number of times an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} matches a pattern. \end{DoxyCompactList}\item 
+typedef \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$($\ast$ \hyperlink{string__design_8h_a3749b534e36da9562688d0c6d400481c}{t\+\_\+str\+\_\+split}) (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, \hyperlink{structClass}{Class} $\ast$type, char $\ast$sep)
+\begin{DoxyCompactList}\small\item\em Function pointer which represents a member function returning an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} instancied from {\ttfamily \hyperlink{container__design_8h_a2baa2855e4617ebc7ad317f13fda1cbe}{t\+\_\+container}} or one of its derived class. The {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} returned contains the value contained in {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} {\ttfamily self}} but splitted with separators. The returning {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} has to be -\/ or derived of -\/ a {\ttfamily \hyperlink{container__design_8h_a2baa2855e4617ebc7ad317f13fda1cbe}{t\+\_\+container}} to be able to store severals values in case where at least one separator is found in {\ttfamily self}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries string\+\_\+insert\+\_\+at} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, void $\ast$data, int pos)\hypertarget{string__design_8h_a4a9923abad4a8d1aa16ba38be6f00e78}{}\label{string__design_8h_a4a9923abad4a8d1aa16ba38be6f00e78}
+
+\item 
+int {\bfseries string\+\_\+delete\+\_\+at} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int pos)\hypertarget{string__design_8h_aa72d9ba0766c4247eb8f7ab64ab7566d}{}\label{string__design_8h_aa72d9ba0766c4247eb8f7ab64ab7566d}
+
+\item 
+int {\bfseries string\+\_\+erase} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{string__design_8h_aa4047d2f5df725ba12af366f8c9b170b}{}\label{string__design_8h_aa4047d2f5df725ba12af366f8c9b170b}
+
+\item 
+void {\bfseries string\+\_\+affect} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, void $\ast$data)\hypertarget{string__design_8h_a7609592f28cbb3b7f085e43fea9c4c4b}{}\label{string__design_8h_a7609592f28cbb3b7f085e43fea9c4c4b}
+
+\item 
+void {\bfseries string\+\_\+print} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{string__design_8h_a197e6ad224fda14871a31ceee62d323e}{}\label{string__design_8h_a197e6ad224fda14871a31ceee62d323e}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+front} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{string__design_8h_ab0eee54307320ef8df122eec8a99ed20}{}\label{string__design_8h_ab0eee54307320ef8df122eec8a99ed20}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+back} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{string__design_8h_a97a350103dd19ed093c8567ce7b3b9c3}{}\label{string__design_8h_a97a350103dd19ed093c8567ce7b3b9c3}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+at} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, size\+\_\+t pos)\hypertarget{string__design_8h_a4b86f10ba617aa02f5fdeba98db0fcc6}{}\label{string__design_8h_a4b86f10ba617aa02f5fdeba98db0fcc6}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+dup} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self)\hypertarget{string__design_8h_a8a09fa761e35020ee3075b0022a22e44}{}\label{string__design_8h_a8a09fa761e35020ee3075b0022a22e44}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+split} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, \hyperlink{structClass}{Class} $\ast$type, char $\ast$sep)\hypertarget{string__design_8h_a1e53bcc1d9415ffa9b6898481c8b80f5}{}\label{string__design_8h_a1e53bcc1d9415ffa9b6898481c8b80f5}
+
+\item 
+\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$ {\bfseries string\+\_\+substr} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, \hyperlink{structClass}{Class} $\ast$type, int begin, int len)\hypertarget{string__design_8h_a6f7e9c28529c47c8cc74b7d56316793a}{}\label{string__design_8h_a6f7e9c28529c47c8cc74b7d56316793a}
+
+\item 
+\hyperlink{bool_8h_ab719d996d8c101c34248bc256b8dcfd8}{t\+\_\+bool} {\bfseries string\+\_\+match} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$compare)\hypertarget{string__design_8h_a651e205d9d96fa5e77191ab733a489a8}{}\label{string__design_8h_a651e205d9d96fa5e77191ab733a489a8}
+
+\item 
+int {\bfseries string\+\_\+nmatch} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$compare)\hypertarget{string__design_8h_ae1bc769425307311a88dd07ecf6d1c96}{}\label{string__design_8h_ae1bc769425307311a88dd07ecf6d1c96}
+
+\item 
+size\+\_\+t {\bfseries string\+\_\+findstr} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, char $\ast$substr)\hypertarget{string__design_8h_af512fc67776af11a94a17e596b816a95}{}\label{string__design_8h_af512fc67776af11a94a17e596b816a95}
+
+\item 
+size\+\_\+t {\bfseries string\+\_\+find} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int c)\hypertarget{string__design_8h_a4527a92e8e91e7e407d811e66ce1d39a}{}\label{string__design_8h_a4527a92e8e91e7e407d811e66ce1d39a}
+
+\item 
+size\+\_\+t {\bfseries string\+\_\+lfind} (\hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$self, int c)\hypertarget{string__design_8h_a087881d31028b68a94bfc98af1dc6be6}{}\label{string__design_8h_a087881d31028b68a94bfc98af1dc6be6}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structClass}{Class} $\ast$ \hyperlink{string__design_8h_af7e8564a6382e9d7dc80b24ba73186d7}{\+\_\+string}\hypertarget{string__design_8h_af7e8564a6382e9d7dc80b24ba73186d7}{}\label{string__design_8h_af7e8564a6382e9d7dc80b24ba73186d7}
+
+\begin{DoxyCompactList}\small\item\em String class description variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+dup@{t\+\_\+dup}}
+\index{t\+\_\+dup@{t\+\_\+dup}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+dup}{t\_dup}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Object}$\ast$($\ast$ t\+\_\+dup) ({\bf Object} $\ast$self)}\hypertarget{string__design_8h_a142918c94b762406f529a28ebe7c1be5}{}\label{string__design_8h_a142918c94b762406f529a28ebe7c1be5}
+
+
+Function pointer which represents a member function returning memory allocated copy of something. Like strdup() for {\ttfamily char $\ast$} in the libC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} to duplicate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duplicated {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}}. 
+\end{DoxyReturn}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+str\+\_\+find@{t\+\_\+str\+\_\+find}}
+\index{t\+\_\+str\+\_\+find@{t\+\_\+str\+\_\+find}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+str\+\_\+find}{t\_str\_find}}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\+\_\+t($\ast$ t\+\_\+str\+\_\+find) ({\bf Object} $\ast$self, int c)}\hypertarget{string__design_8h_a12a4daaa53dc2aa57a69c6afb297c60a}{}\label{string__design_8h_a12a4daaa53dc2aa57a69c6afb297c60a}
+
+
+Function pointer which represents a member function returning the first position at which a char was found in an {\ttfamily  \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}}. Like find() for strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. Very usually it\textquotesingle{}s a string. \\
+\hline
+{\em substr} & The substring to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If found, the first position at which such a char starts. Otherwise, 0. The position is not index-\/like, the first elements is at the position 1. 
+\end{DoxyReturn}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+str\+\_\+findstr@{t\+\_\+str\+\_\+findstr}}
+\index{t\+\_\+str\+\_\+findstr@{t\+\_\+str\+\_\+findstr}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+str\+\_\+findstr}{t\_str\_findstr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\+\_\+t($\ast$ t\+\_\+str\+\_\+findstr) ({\bf Object} $\ast$self, char $\ast$substr)}\hypertarget{string__design_8h_aeac100a52d95b7dd0a45b6492d65af6e}{}\label{string__design_8h_aeac100a52d95b7dd0a45b6492d65af6e}
+
+
+Function pointer which represents a member function returning the first position at which a substring was found in an {\ttfamily  \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}}. Like find() for strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. Very usually it\textquotesingle{}s a string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If found, the first position at which such a substring starts. Otherwise, 0. The position is not index-\/like, the first elements is at the position 1. 
+\end{DoxyReturn}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+str\+\_\+match@{t\+\_\+str\+\_\+match}}
+\index{t\+\_\+str\+\_\+match@{t\+\_\+str\+\_\+match}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+str\+\_\+match}{t\_str\_match}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf t\+\_\+bool}($\ast$ t\+\_\+str\+\_\+match) ({\bf Object} $\ast$self, char $\ast$compare)}\hypertarget{string__design_8h_ac0a7451e5fdf3aab95e263597d8cf23f}{}\label{string__design_8h_ac0a7451e5fdf3aab95e263597d8cf23f}
+
+
+Function pointer which represents a member function returning a boolean telling if an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} matches a pattern. Kind of regexp for poors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. Very usually it\textquotesingle{}s a string. \\
+\hline
+{\em compare} & The pattern to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the pattern matches, F\+A\+L\+SE otherwise. 
+\end{DoxyReturn}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+str\+\_\+nmatch@{t\+\_\+str\+\_\+nmatch}}
+\index{t\+\_\+str\+\_\+nmatch@{t\+\_\+str\+\_\+nmatch}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+str\+\_\+nmatch}{t\_str\_nmatch}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ t\+\_\+str\+\_\+nmatch) ({\bf Object} $\ast$self, char $\ast$compare)}\hypertarget{string__design_8h_a58da945c23dccd4ef1e579a0366ecf3a}{}\label{string__design_8h_a58da945c23dccd4ef1e579a0366ecf3a}
+
+
+Function pointer which represents a member function returning the number of times an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} matches a pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. Very usually it\textquotesingle{}s a string. \\
+\hline
+{\em compare} & The pattern to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of times the {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} matches the pattern. 
+\end{DoxyReturn}
+\index{string\+\_\+design.\+h@{string\+\_\+design.\+h}!t\+\_\+str\+\_\+split@{t\+\_\+str\+\_\+split}}
+\index{t\+\_\+str\+\_\+split@{t\+\_\+str\+\_\+split}!string\+\_\+design.\+h@{string\+\_\+design.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+str\+\_\+split}{t\_str\_split}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Object}$\ast$($\ast$ t\+\_\+str\+\_\+split) ({\bf Object} $\ast$self, {\bf Class} $\ast$type, char $\ast$sep)}\hypertarget{string__design_8h_a3749b534e36da9562688d0c6d400481c}{}\label{string__design_8h_a3749b534e36da9562688d0c6d400481c}
+
+
+Function pointer which represents a member function returning an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} instancied from {\ttfamily \hyperlink{container__design_8h_a2baa2855e4617ebc7ad317f13fda1cbe}{t\+\_\+container}} or one of its derived class. The {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} returned contains the value contained in {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} {\ttfamily self}} but splitted with separators. The returning {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} has to be -\/ or derived of -\/ a {\ttfamily \hyperlink{container__design_8h_a2baa2855e4617ebc7ad317f13fda1cbe}{t\+\_\+container}} to be able to store severals values in case where at least one separator is found in {\ttfamily self}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & It\textquotesingle{}s an {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object} $\ast$} to avoid warnings when doing implicits upcastings. Very usually it\textquotesingle{}s a string. \\
+\hline
+{\em type} & A container class description variable or a container. The behaviour is defined by the implementation of push\+\_\+back(). \\
+\hline
+{\em sep} & Each char in {\ttfamily sep} is a separator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created {\ttfamily \hyperlink{object_8h_a608d016c3acb8a52cdfb8e21a8fd294e}{Object}} which store the splitted value of {\ttfamily self}. 
+\end{DoxyReturn}

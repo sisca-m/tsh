@@ -4,14 +4,21 @@ EXT	=	c
 
 EXEC	=	ftsh
 
+LIBS	=	libobject.a
+
 OBJDIR	=	build
 
-CFLAGS	=	-Wall -Wextra -ansi -pedantic
-CFLAGS	+=	-I./includes/
+LIBSDIR	=	libs
+
+CFLAGS	=	-Wall -Wextra -ansi -pedantic -g3
+CFLAGS	+=	-I./srcs/includes/	\
+		-I./libs/includes/
+CFLAGS	+=	-L$(LIBSDIR) -lobject
 
 VPATH	=	srcs/
 
-SRCS	=	main
+SRCS	=	main	\
+		env
 
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 
@@ -19,11 +26,14 @@ OBJS	=	$(SRCS:.$(EXT)=.o)
 
 OBJS	:=	$(addprefix $(OBJDIR)/, $(OBJS))
 
-all: 		$(EXEC)
+all: 		$(LIBS) $(EXEC)
+
+$(LIBS):
+		@$(MAKE) -C $(LIBSDIR)
 
 $(EXEC):	$(OBJDIR) $(OBJS)
 		-@echo -n Building $@ ...
-		@$(CC) -o $@ $(filter %.o, $^) $(LDFLAGS)
+		@$(CC) -o $@ $(filter %.o, $^) $(LDFLAGS) $(CFLAGS)
 		-@echo " [OK]"
 
 $(OBJDIR):
@@ -37,10 +47,12 @@ $(OBJDIR)/%.o:	%.$(EXT)
 		-@echo " [OK]"
 
 clean:
+		-@$(MAKE) clean -C $(LIBSDIR)
 		-@$(RM) -r $(OBJDIR)
 		-@echo Cleaning objects files ... [OK]
 
 fclean:		clean
+		-@$(MAKE) fclean -C $(LIBSDIR)
 		-@$(RM) $(EXEC)
 		-@echo Cleaning the executable ... [OK]
 
