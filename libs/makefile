@@ -5,7 +5,7 @@
 ## Login   <roche_g@epitech.net>
 ## 
 ## Started on  Thu Mar 17 15:08:58 2016 
-## Last update Tue Apr 26 00:36:23 2016 
+## Last update Thu Apr 28 01:29:12 2016 Guillaume roche
 ##
 
 CC	=	gcc
@@ -75,7 +75,7 @@ all: 		$(EXEC)
 
 $(EXEC):	$(OBJDIR) $(OBJS)
 		-@echo -n Building $@ ...
-		@$(AR) -o $@ $(filter %.o, $^)
+		@$(AR) $@ $(filter %.o, $^)
 		-@echo " [OK]"
 
 $(OBJDIR):

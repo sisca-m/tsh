@@ -2,7 +2,7 @@ CC	=	gcc
 
 EXT	=	c
 
-EXEC	=	ftsh
+EXEC	=	tsh
 
 LIBS	=	libobject.a
 
@@ -18,7 +18,8 @@ CFLAGS	+=	-L$(LIBSDIR) -lobject
 VPATH	=	srcs/
 
 SRCS	=	main	\
-		env
+		env	\
+		path
 
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 

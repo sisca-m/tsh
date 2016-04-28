@@ -1,11 +1,11 @@
 /*
 ** array_design.c for array design in /home/roche_g/dataStructures/lists/oop/src
-** 
-** Made by 
+**
+** Made by
 ** Login   <roche_g@epitech.net>
-** 
-** Started on  Mon Mar 14 01:48:56 2016 
-** Last update Tue Apr 26 02:12:27 2016 
+**
+** Started on  Mon Mar 14 01:48:56 2016
+** Last update Thu Apr 28 04:01:32 2016 Guillaume roche
 */
 
 #include <stdio.h>
@@ -42,7 +42,6 @@ static void	array_ctor(Object *self, va_list *args)
   if ((copy = va_arg(*args, void *)))
     copy_ctor(array, copy, va_arg(*args, size_t));
   nb_args = va_arg(*args, size_t);
-  printf("%zd\n", nb_args);
   while (nb_args > 0)
     {
       array->insertAt(array, va_arg(*args, void *),

@@ -1,11 +1,11 @@
 /*
 ** string_design.h for list design in /home/roche_g/dataStructures/oop
-** 
-** Made by 
+**
+** Made by
 ** Login   <roche_g@epitech.net>
-** 
-** Started on  Mon Mar 14 13:24:39 2016 
-** Last update Sun Mar 20 18:55:55 2016 
+**
+** Started on  Mon Mar 14 13:24:39 2016
+** Last update Thu Apr 28 03:35:48 2016 Guillaume roche
 */
 
 #ifndef STRING_DESIGN_H_
@@ -90,18 +90,18 @@ typedef int	(*t_str_nmatch)(Object *self, char *compare);
  *        the value contained in <tt>#Object @p self</tt> but splitted with
  *        separators. The returning <tt>#Object</tt> has to be  - or derived
  *        of - a <tt>#t_container</tt> to be able to store severals values in
- *        case where at least one separator is found in @p self. 
+ *        case where at least one separator is found in @p self.
  *
  * @param self It's an <tt>#Object *</tt> to avoid warnings
  *        when doing implicits upcastings. Very usually it's a string.
  * @param type A container class description variable or a container.
- *        The behaviour is defined by the implementation of push_back(). 
+ *        The behaviour is defined by the implementation of push_back().
  * @param sep Each char in @p sep is a separator.
  *
  * @return The newly created <tt>#Object</tt> which store the splitted value
  *         of @p self.
  */
-typedef Object	*(*t_str_split)(Object *self, Class *type, char *sep);
+typedef Object	*(*t_str_split)(Object *self, Class *type, const char *sep);
 
 struct		s_String {
   t_container	base;
@@ -131,7 +131,7 @@ Object	*string_back(Object *self);
 Object	*string_at(Object *self, size_t pos);
 
 Object	*string_dup(Object *self);
-Object	*string_split(Object *self, Class *type, char *sep);
+Object	*string_split(Object *self, Class *type, const char *sep);
 Object	*string_substr(Object *self, Class *type, int begin, int len);
 
 t_bool	string_match(Object *self, char *compare);

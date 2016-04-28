@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include "ftsh.h"
+#include "tsh.h"
 
 char		*dynamic_getenv(const char *var)
 {
