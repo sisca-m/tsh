@@ -30,6 +30,19 @@
 typedef Object	*(*t_dup)(Object *self);
 
 /**
+ * @brief Function pointer which represents a member function returning a
+ *        concatenated string. Like strcat() for <tt>char *</tt> in the
+ *        libC except that a t_concat function will take care of memory
+ *        allocation if needed..
+ *
+ * @param self The <tt>#Object</tt> to duplicate.
+ *
+ * @return The concatenated <tt>#Object</tt>.
+ */
+/*typedef Object	*(*t_concat)(Object *self, char *str_to_concat);
+*/
+
+/**
  * @brief Function pointer which represents a member function returning
  *        the first position at which a substring was found in an <tt>
  *        #Object</tt>. Like find() for strings.

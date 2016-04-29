@@ -11,6 +11,24 @@ static t_container	*splited_path(const char *path, const char *sep)
   return (splited);
 }
 
+static char	*is_bin_found(const char *bin, const char *extract)
+{
+  char		*full_bin_path;
+
+  if (strlen(extract) > 0 && extract[strlen(extract) - 1] == '/')
+    full_bin_path = concat(extract, bin);
+  else if (strlen(extract) > 0)
+    {
+      /* Leak to fix */
+      full_bin_path = concat(extract, "/");
+      full_bin_path = concat(full_bin_path, bin); 
+    }
+  else
+    full_bin_path = str_dup(bin);
+  printf("concat: [%s]\n", full_bin_path);
+  return (full_bin_path);
+}
+
 char	*fetch_path(const char *bin, const char *path_var, const char *sep)
 {
   t_container	*splited_ctn;
@@ -25,14 +43,13 @@ char	*fetch_path(const char *bin, const char *path_var, const char *sep)
   splited_var = splited_ctn->data(splited_ctn);
   while (splited_var[i])
     {
-      if (!access(splited_var[i], X_OK))
-	{
-	  printf("in func: [%s] [%s]\n", bin, splited_var[i]);
-	  break;
-	}
+      if ((path_to_bin = is_bin_found(bin, splited_var[i])) &&
+	  !access(path_to_bin, X_OK))
+	return (path_to_bin);
+      free(path_to_bin);
+      path_to_bin = NULL;
       ++i;
     }
-  path_to_bin = str_dup(splited_var[i]);
   delete(splited_ctn);
-  return (path_to_bin);
+  return (NULL);
 }

@@ -8,7 +8,7 @@
 ## Last update Thu Apr 28 01:29:12 2016 Guillaume roche
 ##
 
-CC	=	gcc
+CC	=	cc
 
 AR	=	ar rcs
 

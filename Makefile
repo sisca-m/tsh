@@ -1,4 +1,4 @@
-CC	=	gcc
+CC	=	cc
 
 EXT	=	c
 
@@ -13,13 +13,14 @@ LIBSDIR	=	libs
 CFLAGS	=	-Wall -Wextra -ansi -pedantic -g3
 CFLAGS	+=	-I./srcs/includes/	\
 		-I./libs/includes/
-CFLAGS	+=	-L$(LIBSDIR) -lobject
+LDFLAGS	+=	-L$(LIBSDIR) -lobject
 
 VPATH	=	srcs/
 
 SRCS	=	main	\
 		env	\
-		path
+		path	\
+		utils
 
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 
@@ -34,7 +35,7 @@ $(LIBS):
 
 $(EXEC):	$(OBJDIR) $(OBJS)
 		-@echo -n Building $@ ...
-		@$(CC) -o $@ $(filter %.o, $^) $(LDFLAGS) $(CFLAGS)
+		@$(CC) -o $@ $(filter %.o, $^) $(LDFLAGS)
 		-@echo " [OK]"
 
 $(OBJDIR):

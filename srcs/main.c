@@ -31,7 +31,7 @@ int		main(int ac, char **av, char **env)
   char		*path_to_bin;
 
   init(env);
-  path_to_bin = fetch_path("ls", "PATH", ":");
+  path_to_bin = fetch_path("toto", "PATH", ":");
   printf("[%s]\n", path_to_bin);
   ending();
   (void)ac;
