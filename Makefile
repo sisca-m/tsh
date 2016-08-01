@@ -13,13 +13,16 @@ CFLAGS	+=	-I./srcs/includes/	\
 LDFLAGS	+=	-L$(LIBDIR) -lobject
 
 VPATH	=	./srcs/			\
-		./srcs/classes/shell
+		./srcs/classes/shell/	\
+		./srcs/builtins/
 
 SRCS	=	main		\
 		shell_design	\
+		builtins	\
 		env		\
 		path		\
-		utils
+		utils		\
+		builtin_env
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 
 OBJS	=	$(SRCS:.$(EXT)=.o)

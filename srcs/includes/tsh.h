@@ -7,6 +7,7 @@
 # include <stdio.h>
 # include "lobject.h"
 # include "shell_design.h"
+# include "builtin.h"
 
 extern t_shell	*sh;
 
