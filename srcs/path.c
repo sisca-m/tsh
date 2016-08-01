@@ -21,7 +21,7 @@ static char	*is_bin_found(const char *bin, const char *extract)
     {
       /* Leak to fix */
       full_bin_path = concat(extract, "/");
-      full_bin_path = concat(full_bin_path, bin); 
+      full_bin_path = concat(full_bin_path, bin);
     }
   else
     full_bin_path = str_dup(bin);
@@ -31,25 +31,28 @@ static char	*is_bin_found(const char *bin, const char *extract)
 
 char	*fetch_path(const char *bin, const char *path_var, const char *sep)
 {
-  t_container	*splited_ctn;
-  char		**splited_var;
+  t_container	*splited_path_ctn;
+  char		**dirs_in_path;
   char		*path_to_bin;
   size_t	i;
 
-  splited_ctn = splited_path(dynamic_getenv(path_var), sep);
-  i = 0;
-  if (!splited_ctn)
+  splited_path_ctn = splited_path(dynamic_getenv(path_var), sep);
+
+  if (!splited_path_ctn)
     return (NULL);
-  splited_var = splited_ctn->data(splited_ctn);
-  while (splited_var[i])
+
+  i = 0;
+  dirs_in_path = splited_path_ctn->data(splited_path_ctn);
+  while (dirs_in_path[i])
     {
-      if ((path_to_bin = is_bin_found(bin, splited_var[i])) &&
+      if ((path_to_bin = is_bin_found(bin, dirs_in_path[i])) &&
 	  !access(path_to_bin, X_OK))
 	return (path_to_bin);
       free(path_to_bin);
       path_to_bin = NULL;
       ++i;
     }
-  delete(splited_ctn);
+
+  delete(splited_path_ctn);
   return (NULL);
 }

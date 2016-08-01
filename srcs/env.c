@@ -6,11 +6,11 @@ char		*dynamic_getenv(const char *var)
   char		**env;
 
   i = 0;
-  env = app.env->data(app.env);
+  env = sh->env->data(sh->env);
   if (env)
     while (env[i] != NULL)
       {
-	if (!strncmp(env[i], var, strlen(var)))
+	if (!strncmp(env[i], var, strlen(var)) && env[i][strlen(var)] == '=')
 	  break ;
 	++i;
       }

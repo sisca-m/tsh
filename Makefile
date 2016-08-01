@@ -1,39 +1,36 @@
-CC	=	cc
-
-EXT	=	c
-
 EXEC	=	tsh
 
-LIBS	=	libobject.a
-
+CC	=	cc
+EXT	=	c
 OBJDIR	=	build
 
-LIBSDIR	=	libs
+LIB	=	libobject.a
+LIBDIR	=	libobject
 
-CFLAGS	=	-Wall -Wextra -ansi -pedantic -g3
+CFLAGS	=	-Wall -Wextra -g3 -D_GNU_SOURCE
 CFLAGS	+=	-I./srcs/includes/	\
-		-I./libs/includes/
-LDFLAGS	+=	-L$(LIBSDIR) -lobject
+		-I./$(LIBDIR)/includes/
+LDFLAGS	+=	-L$(LIBDIR) -lobject
 
-VPATH	=	srcs/
+VPATH	=	./srcs/			\
+		./srcs/classes/shell
 
-SRCS	=	main	\
-		env	\
-		path	\
+SRCS	=	main		\
+		shell_design	\
+		env		\
+		path		\
 		utils
-
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 
 OBJS	=	$(SRCS:.$(EXT)=.o)
-
 OBJS	:=	$(addprefix $(OBJDIR)/, $(OBJS))
 
-all: 		$(LIBS) $(EXEC)
+all: 		$(EXEC)
 
-$(LIBS):
-		@$(MAKE) -C $(LIBSDIR)
+$(LIB):
+		@$(MAKE) -C $(LIBDIR)
 
-$(EXEC):	$(OBJDIR) $(OBJS)
+$(EXEC):	$(OBJDIR) $(LIB) $(OBJS)
 		-@echo -n Building $@ ...
 		@$(CC) -o $@ $(filter %.o, $^) $(LDFLAGS)
 		-@echo " [OK]"
@@ -49,12 +46,12 @@ $(OBJDIR)/%.o:	%.$(EXT)
 		-@echo " [OK]"
 
 clean:
-		-@$(MAKE) clean -C $(LIBSDIR)
+		-@$(MAKE) clean -C $(LIBDIR)
 		-@$(RM) -r $(OBJDIR)
 		-@echo Cleaning objects files ... [OK]
 
 fclean:		clean
-		-@$(MAKE) fclean -C $(LIBSDIR)
+		-@$(MAKE) fclean -C $(LIBDIR)
 		-@$(RM) $(EXEC)
 		-@echo Cleaning the executable ... [OK]
 
