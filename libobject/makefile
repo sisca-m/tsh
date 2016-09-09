@@ -1,4 +1,4 @@
-CC	=	cc
+CC	=	gcc
 
 AR	=	ar rcs
 
@@ -10,7 +10,7 @@ OBJDIR	=	build
 
 LIBSDIR	=	libs
 
-CFLAGS	=	-Wall -Wextra -ansi -pedantic -g3
+CFLAGS	=	-Wall -Wextra -pedantic -g3
 CFLAGS	+=	-I./includes/
 
 VPATH	=	srcs/			\

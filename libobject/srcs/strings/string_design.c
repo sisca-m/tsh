@@ -29,9 +29,8 @@ static int	_string_ctor(Object *self, va_list *args)
 
 static void	_string_dtor(Object *self, va_list *args)
 {
+  (void)self;
   (void)args;
-  free(((t_container *)self)->contained);
-  ((t_container *)self)->contained = NULL;
 }
 
 static t_String _string_descr =

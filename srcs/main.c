@@ -12,8 +12,10 @@ int		main(int ac, char **av, char **env)
   sh = _sh;
   path_to_bin = fetch_path("ls", "PATH", ":");
   printf("[%s]\n", path_to_bin);
-  printf("[%s]", sh->stdin->getline(sh->stdin));
-  fflush(stdin);
+  free(path_to_bin);
+  builtin_unsetenv((char *[]){"_", "SECURITYSESSIONID", NULL});
+  printf("after unsetenv\n");
+  builtin_env();
   delete(sh);
   (void)ac;
   (void)av;

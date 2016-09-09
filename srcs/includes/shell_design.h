@@ -6,7 +6,7 @@
 
 typedef struct	s_shell {
   Class		base;
-  t_container	*env;
+  dict		*env;
   filestream   	*stdin;
   filestream	*stdout;
   filestream   	*stderr;

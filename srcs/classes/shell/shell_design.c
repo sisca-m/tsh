@@ -2,21 +2,46 @@
 
 static int	_shell_ctor(Object *self, va_list *args)
 {
-  t_shell	*sh;
+  t_shell	*shell;
+  t_String	*string;
+  t_container	*splited_var;
+  char		**env;
+  size_t	i;
 
-  sh = self;
-  if (!(sh->env = new(_array, va_arg(*args, char **), 0, 0)))
+  shell = self;
+  if (!(shell->env = new(_dict, NULL, 0)))
     return (FALSE);
-  sh->stdin = new(_filestream, stdin, NO_OPEN);
-  sh->stdout = new(_filestream, stdout, NO_OPEN);
-  sh->stderr = new(_filestream, stderr, NO_OPEN);
-  sh->in = NULL;
+  env = va_arg(*args, char **);
+  i = 0;
+  while (env[i])
+    {
+      if (!(string = new(_string, env[i], 0)))
+	return (FALSE);
+      if (!(splited_var = string->split(string, _array, "=")))
+	return (FALSE);
+      shell->env->push_back(shell->env,
+			    splited_var->at(splited_var, 0),
+			    splited_var->at(splited_var, 1));
+      delete(splited_var);
+      delete(string);
+      ++i;
+    }
+  shell->stdin = new(_filestream, stdin, NO_OPEN);
+  shell->stdout = new(_filestream, stdout, NO_OPEN);
+  shell->stderr = new(_filestream, stderr, NO_OPEN);
+  shell->in = NULL;
   return (TRUE);
 }
 
 static void	_shell_dtor(Object *self, va_list *args)
 {
-  delete(((t_shell *)self)->env);
+  t_shell	*shell;
+
+  shell = self;
+  delete(shell->env);
+  delete(shell->stdin);
+  delete(shell->stdout);
+  delete(shell->stderr);
   (void)args;
 }
 

@@ -13,6 +13,13 @@ void		dict_basic_print(size_t i, Object *elem, const char *prefix)
   (void)i;
 }
 
+void	dict_print_str(size_t i, Object *elem, const char *prefix)
+{
+  printf("%skey: [%s]\n%svalue: [%s]\n",
+	 prefix, ((t_pair *)elem)->key, prefix, (char *)((t_pair *)elem)->data);
+  (void)i;
+}
+
 void		_dict_print(Object *container, const char *title,
 			    void (*f)(size_t i, Object *elem,
 				      const char *prefix),

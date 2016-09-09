@@ -1,13 +1,13 @@
 EXEC	=	tsh
 
-CC	=	cc
+CC	=	gcc
 EXT	=	c
 OBJDIR	=	build
 
 LIB	=	libobject.a
 LIBDIR	=	libobject
 
-CFLAGS	=	-Wall -Wextra -g3 -D_GNU_SOURCE
+CFLAGS	=	-Wall -Wextra -pedantic -g3
 CFLAGS	+=	-I./srcs/includes/	\
 		-I./$(LIBDIR)/includes/
 LDFLAGS	+=	-L$(LIBDIR) -lobject
@@ -16,13 +16,15 @@ VPATH	=	./srcs/			\
 		./srcs/classes/shell/	\
 		./srcs/builtins/
 
-SRCS	=	main		\
-		shell_design	\
-		builtins	\
-		env		\
-		path		\
-		utils		\
-		builtin_env
+SRCS	=	main			\
+		shell_design		\
+		builtins		\
+		env			\
+		path			\
+		utils			\
+		builtin_env		\
+		builtin_setenv		\
+		builtin_unsetenv
 SRCS	:=	$(addsuffix .$(EXT), $(SRCS))
 
 OBJS	=	$(SRCS:.$(EXT)=.o)
