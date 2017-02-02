@@ -2,55 +2,47 @@
 # define CONTAINER_DESIGN_H_
 
 /**
- * \file
- */
-
-/*
-** Types of containers
-*/
-
-/**
- * @brief Container class
+ * @typedef Container class
  */
 typedef struct s_container	t_container;
 
 /**
- * @brief Array class
+ * @typedef Array class
  */
 typedef struct s_Array		t_Array;
 
 /**
- * @brief List class
+ * @typedef List class
  */
 typedef struct s_list		t_list;
 
 /**
- * @brief String class
+ * @typedef String class
  */
 typedef struct s_String		t_String;
 
 /**
- * @brief Iterator class
+ * @typedef Iterator class
  */
 typedef struct s_iter		t_iterator;
 
 /**
- * @brief Iterator class - For smaller type
+ * @typedef Iterator class - For smaller type
  */
 typedef t_iterator	t_it;
 
 /**
- * @brief Argparser class;
+ * @typedef Argparser class;
  */
 typedef struct s_argsparser	t_argsparser;
 
 /**
- * @brief Map class;
+ * @typedef Map class;
  */
 typedef struct s_dict	dict;
 
 /**
- * @brief Filestream class;
+ * @typedef Filestream class;
  */
 typedef struct s_filestream	filestream;
 
@@ -63,7 +55,7 @@ typedef struct s_filestream	filestream;
  * @brief Function pointer which represents a member function returning
  *        thee contained data.
  *
- * @param self It's an <tt>#Object *</tt> to avoid warnings
+ * @param self It's an Object * to avoid warnings
  *        when doing implicits upcastings.
  *
  * @return The contained value.
@@ -75,7 +67,7 @@ Object		*_container_data(Object *self);
  * @brief Function pointer which represents a member function returning
  *        the size of something. Like size() for containers.
  *
- * @param self It's an <tt>#Object *</tt> to avoid warnings
+ * @param self It's an Object * to avoid warnings
  *        when doing implicits upcastings.
  *
  * @return The size of the contained value.
@@ -87,7 +79,7 @@ size_t		_container_size(Object *self);
  * @brief Function pointer which represents a member function retuning
  *        a bool if a something is empty or not. Like empty() for containers
  *
- * @param self It's an <tt>#Object *</tt> to avoid warnings
+ * @param self It's an Object * to avoid warnings
  *        when doing implicits upcastings.
  *
  * @return TRUE if the t_container#contained is t_container#size == 0,
@@ -252,29 +244,12 @@ Object		*_container_to_type(Object *self, Class *type);
 typedef Object	*(*t_sub)(Object *self, Class *type, int begin, int len);
 Object		*_container_sub(Object *self, Class *type, int begin, int len);
 
-/**
- * @brief Container class
- *
- * Inherits just of the very base class #Class
- * Internally the container class uses an <tt>#Object *</tt> and a
- * <tt>size_t</tt>. The <tt>#Object *</tt> represents a data of whatever
- * type and the <tt>size_t</tt> its size. Even if those fields will never
- * change, it's better to use accessors.
- * 
- */
 struct		s_container
 {
   Class		base;
-  /**
-   * @brief The contained value. Can store any type.
-   */
+
   Object	*contained;
-  /**
-   * @brief The size of the contained value.
-   *
-   * The size refers to the size of the element pointed by the first pointer.
-   * Thus, without any indirections resolved.
-   */
+
   size_t	contained_size;
   t_data	data;
 

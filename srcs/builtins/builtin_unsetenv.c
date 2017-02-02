@@ -8,7 +8,7 @@ t_bool	builtin_unsetenv(char **args)
   while (args[i])
     {
       if (sh->env->del_by_key(sh->env, args[i]) == FALSE)
-        fprintf(stderr, "Unsetenv: Cannot delete invalid key %s", args[i]);
+        fprintf(stderr, "Unsetenv: Cannot delete invalid key %s\n", args[i]);
       ++i;
     }
   return (TRUE);

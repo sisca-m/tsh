@@ -1,5 +1,3 @@
-#include <string.h>
-#include <stdio.h>
 #include "argsparser_design.h"
 
 static char	*extract_arg(t_opt *opt, int i, char *arg)
@@ -71,17 +69,17 @@ static t_container	*case_normal(t_opt *opt, t_argsparser *p,
   return (ctn);
 }
 
-t_container	*_consume_args(t_opt *opt, t_argsparser *p, t_container *ctn)
+t_container	*_consume_args(t_opt *opt, t_argsparser *parser, t_container *ctn)
 {
   if (opt->compound == FALSE)
-    ++p->i;
+    ++parser->i;
   if (opt->nargs == ONE_OPTIONNAL)
-    return (case_one_optionnal(opt, p, ctn));
+    return (case_one_optionnal(opt, parser, ctn));
   else if (opt->nargs == ALL_PRESENTS)
-    return (case_all(opt, p, ctn));
+    return (case_all(opt, parser, ctn));
   else if (opt->nargs == ALL_AT_LEAST_ONE)
-    return (case_all(opt, p, ctn));
+    return (case_all(opt, parser, ctn));
   else
-    return (case_normal(opt, p, ctn));
+    return (case_normal(opt, parser, ctn));
   return (NULL);
 }

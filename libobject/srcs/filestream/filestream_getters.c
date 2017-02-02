@@ -1,4 +1,3 @@
-#include <string.h>
 #include "filestream_design.h"
 
 char	*_filestream_getline(filestream *fs)

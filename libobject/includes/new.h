@@ -1,7 +1,6 @@
 #ifndef NEW_H_
 # define NEW_H_
 
-# include <stdarg.h>
 # include "object.h"
 
 void	*new(Class *class, ...);

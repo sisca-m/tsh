@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "argsparser_design.h"
 
 void	opt_print(size_t i, Object *elem)

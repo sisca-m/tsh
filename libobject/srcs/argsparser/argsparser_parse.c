@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <string.h>
 #include "argsparser_design.h"
 
 static t_bool	required_are_presents(t_argsparser *p, dict *d)

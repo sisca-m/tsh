@@ -1,6 +1,6 @@
 EXEC	=	tsh
 
-CC	=	gcc
+CC	=	cc
 EXT	=	c
 OBJDIR	=	build
 

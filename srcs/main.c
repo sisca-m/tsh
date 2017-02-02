@@ -4,12 +4,17 @@ t_shell	*sh = NULL;
 
 int		main(int ac, char **av, char **env)
 {
-  t_shell	*_sh;
   char		*path_to_bin;
+  filestream	*fs;
 
-  if (!(_sh = new(_shell, env)))
+  fs = new(_filestream, "toto.txt", "r");
+  char *s = NULL;
+  while ((s= fs->getline(fs)))
+    {
+      printf("%s\n", s);
+    }
+  if (!(sh = new(_shell, env)))
     return (1);
-  sh = _sh;
   path_to_bin = fetch_path("ls", "PATH", ":");
   printf("[%s]\n", path_to_bin);
   free(path_to_bin);

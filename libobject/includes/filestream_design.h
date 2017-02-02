@@ -1,11 +1,12 @@
 #ifndef FILESTREAM_DESIGN_H_
 # define FILESTREAM_DESIGN_H_
 
+# include <string.h>
 # include <stdio.h>
 # include "container_design.h"
 # include "object.h"
 
-# define READSIZE	(4096)
+# define READSIZE	(2)
 # define NO_OPEN	NULL
 
 typedef char	*(*t_getline)(filestream *fs);

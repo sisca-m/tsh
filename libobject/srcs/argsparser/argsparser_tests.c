@@ -1,4 +1,3 @@
-#include <string.h>
 #include "argsparser_design.h"
 
 t_bool	_is_positionnal(t_opt *opt)

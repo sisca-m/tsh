@@ -1,50 +1,68 @@
 #ifndef ARGSPARSER_DESIGN_H_
 # define ARGSPARSER_DESIGN_H_
 
-/**
- * \file
- */
-
+# include <stdio.h>
+# include <string.h>
 # include "object.h"
 # include "container_design.h"
 # include "array_design.h"
 # include "dict_design.h"
 # include "new.h"
 
-/*
-** nargs defines
-** ?
-** *
-** +
-*/
+/**
+ * nargs defines
+ * ?: There could be 1 or 0 arguments to the option
+ * *: All the following tokens are arguments to the option
+ * +: Same as * but if there isn't at least 1 argument the parsing will fail
+ */
 # define ONE_OPTIONNAL		-1
 # define ALL_PRESENTS		-2
 # define ALL_AT_LEAST_ONE	-3
 
-/*
-** nb_repet including aliases
-** aliases not in excluded
-** required with arguments
-*/
+/**
+ * Use for readability reasons when an option shouldn't be repeated
+ */
+# define NO_REPET	0
+
 typedef struct s_opt	t_opt;
 
+/**
+ * @brief Function pointer which represents a member function testing if an option matches some critera.
+ *
+ * @param opt The tested option.
+ *
+ * @return TRUE if the test succeeds, FALSE otherwise
+ */
 typedef t_bool	(*t_test_arg)(t_opt *opt);
 t_bool		_is_positionnal(t_opt *opt);
 t_bool		_is_kwarg(t_opt *opt);
 
+/**
+ * @brief Function pointer which represents a member function testing if an argument matches an option, prefix, compound are included in the test.
+ *
+ * @param opt The tested option.
+ * @param opt The argument coming from the char ** provided to the argsparser.
+ *
+ * @return TRUE if the test succeeds, FALSE otherwise
+ */
 typedef t_bool	(*t_opt_match)(t_opt *opt, const char *arg);
 t_bool		_opt_match(t_opt *opt, const char *arg);
 
+/**
+ * @brief Function pointer which represents a member function getting the argument(s) of an given option.
+ *
+ * @param opt The option to which the arguments belong to.
+ * @param parser The argsparser.
+ * @param ctn The container storing already existing argument(s) extracted from the stream; null if the option has not been seen already.
+ *
+ * @return The container storing the option arguments
+ */
 typedef t_container	*(*t_arg_consume)(t_opt *opt, t_argsparser *p,
 					  t_container *ctn);
 t_container		*_consume_args(t_opt *opt, t_argsparser *p,
 				       t_container *ctn);
 
-# define NO_REPET	0
 struct		s_opt {
-  /**
-   * @brief Struct that contains info about one option.
-   */
   Class		base;
   char		*help;
   char		*prefix;
@@ -61,14 +79,27 @@ struct		s_opt {
 };
 
 /**
- * @brief Argsparse class
- *
- * Inherits of the #t_container class.
- * The value contained in t_container#contained for the Array class is
- * a void ** which represents a table of whatever type.
+ * @brief Argsparse methods and class
  */
-typedef t_bool	(*t_add_opt)(t_argsparser *parser, ...);
-t_bool		_add_opt(t_argsparser *parser, ...);
+
+
+/**
+ * @brief Method adding an option to an argsparser
+ *
+ * @param parser The argsparser which the option is added to
+ * @param basename The internal identifier of the option
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ * @param parser The argsparser which the option is added to
+ *
+ * @return TRUE if the test succeeds, FALSE otherwise
+ */
+typedef t_bool	(*t_add_opt)(t_argsparser *parser, char *basename, char *help, char *prefix, char *opt, char *vdefault, int nargs, int nb_repet, int optional, int compound);
+t_bool		_add_opt(t_argsparser *parser, char *basename, char *help, char *prefix, char *opt, char *vdefault, int nargs, int nb_repet, int optional, int compound);
 
 typedef dict	*(*t_parse_args)(t_argsparser *parser);
 dict		*_parse_args(t_argsparser *parser);
@@ -83,9 +114,6 @@ typedef int	(*t_set_defaults)(t_argsparser *p, dict *res);
 int		_set_defaults(t_argsparser *p, dict *res);
 
 struct			s_argsparser {
-  /**
-   * @brief Contains informations about the arguments to parse.
-   */
   Class			base;
   dict			*opts;
   char			**args;
