@@ -12,7 +12,7 @@ static t_bool	required_are_presents(t_argsparser *p, dict *d)
   i = 0;
   while (opts_pairs[i])
     {
-      if (((t_opt *)opts_pairs[i]->data)->optionnal == FALSE &&
+      if (((t_opt *)opts_pairs[i]->data)->optionnal == MANDATORY_OPT &&
 	  !(d->get_by_key(d, opts_pairs[i]->key)))
 	{
 	  required_found = FALSE;
@@ -36,7 +36,7 @@ static t_pair	*get_valid_opt(t_argsparser *p)
   return (opt_pair);
 }
 
-int		_set_defaults(t_argsparser *p, dict *res)
+t_bool		_set_defaults(t_argsparser *p, dict *res)
 {
   t_pair	**opts_pairs;
   t_container	*ctn;

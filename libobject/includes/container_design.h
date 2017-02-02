@@ -32,11 +32,6 @@ typedef struct s_iter		t_iterator;
 typedef t_iterator	t_it;
 
 /**
- * @typedef Argparser class;
- */
-typedef struct s_argsparser	t_argsparser;
-
-/**
  * @typedef Map class;
  */
 typedef struct s_dict	dict;
