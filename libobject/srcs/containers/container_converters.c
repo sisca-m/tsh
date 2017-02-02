@@ -1,4 +1,3 @@
-#include "new.h"
 #include "container_design.h"
 
 Object		*_container_to_type(Object *self, Class *type)

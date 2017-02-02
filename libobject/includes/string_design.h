@@ -1,11 +1,9 @@
 #ifndef STRING_DESIGN_H_
 # define STRING_DESIGN_H_
 
-/**
- * \file
- */
-
-# include "object.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
 # include "container_design.h"
 
 /**

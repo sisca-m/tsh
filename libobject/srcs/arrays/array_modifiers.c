@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "array_design.h"
 
 static void	copy_array(void **dest, void **src, void *data, int pos)

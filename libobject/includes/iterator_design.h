@@ -1,11 +1,9 @@
 #ifndef ITERATOR_DESIGN_H_
 # define ITERATOR_DESIGN_H_
 
-/**
- * \file
- */
-
-# include "object.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 # include "container_design.h"
 
 /**

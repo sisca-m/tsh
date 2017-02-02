@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "string_design.h"
 
 void	_string_basic_print(size_t i, Object *elem, const char *prefix)

@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
-#include "new.h"
 #include "string_design.h"
 
 Object		*_string_dup(Object *self)

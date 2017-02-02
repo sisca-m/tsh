@@ -42,6 +42,7 @@ typedef struct s_dict	dict;
 typedef struct s_filestream	filestream;
 
 # include <stddef.h>
+# include "new.h"
 # include "object.h"
 # include "bool.h"
 # include "utils.h"

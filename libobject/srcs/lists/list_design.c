@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "list_design.h"
 
 static int	_list_ctor(Object *self, va_list *args)

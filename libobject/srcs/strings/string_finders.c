@@ -1,4 +1,3 @@
-#include <string.h>
 #include "string_design.h"
 
 size_t	_string_findstr(Object *self, char *substr)

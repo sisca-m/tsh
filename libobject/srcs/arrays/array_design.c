@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "array_design.h"
 
 static void	copy_ctor(t_container *array, void **copy, size_t size)

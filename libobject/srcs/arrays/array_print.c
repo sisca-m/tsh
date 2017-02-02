@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "array_design.h"
 
 void	array_basic_print(size_t i, Object *elem, const char *prefix)

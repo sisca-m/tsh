@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "dict_design.h"
 
 t_bool		_dict_push_back(Object *self, char *key, void *data)

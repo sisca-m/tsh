@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "string_design.h"
 
 Object		*_string_front(Object *string)

@@ -1,10 +1,8 @@
 #ifndef ARRAY_DESIGN_H_
 # define ARRAY_DESIGN_H_
 
-/**
- * \file
- */
-
+# include <stdio.h>
+# include <stdlib.h>
 # include "object.h"
 # include "container_design.h"
 # include "list_design.h"

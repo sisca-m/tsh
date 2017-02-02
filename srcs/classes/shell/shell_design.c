@@ -39,9 +39,6 @@ static void	_shell_dtor(Object *self, va_list *args)
 
   shell = self;
   delete(shell->env);
-  delete(shell->stdin);
-  delete(shell->stdout);
-  delete(shell->stderr);
   (void)args;
 }
 

@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "list_design.h"
 
 void		_list_basic_print(size_t i, Object *elem, const char *prefix)

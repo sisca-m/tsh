@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "dict_design.h"
-#include "array_design.h"
-#include "utils.h"
 
 void		dict_basic_print(size_t i, Object *elem, const char *prefix)
 {

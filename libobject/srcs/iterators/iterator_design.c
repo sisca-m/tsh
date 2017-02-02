@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "iterator_design.h"
-#include "bool.h"
 
 static int	_iterator_ctor(Object *self, va_list *args)
 {

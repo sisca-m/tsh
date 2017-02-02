@@ -1,4 +1,3 @@
-#include <string.h>
 #include "dict_design.h"
 
 Object		*_get_obj_by_key(Object *dict_obj, const char *key)

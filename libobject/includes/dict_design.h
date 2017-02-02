@@ -1,9 +1,12 @@
 #ifndef DICT_DESIGN_H_
 # define DICT_DESIGN_H_
 
+# include <stdio.h>
+# include <stdlib.h>
 # include <string.h>
 # include "object.h"
 # include "container_design.h"
+# include "array_design.h"
 
 typedef struct	s_pair {
   char		*key;

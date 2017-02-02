@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "dict_design.h"
-#include "array_design.h"
 
 static t_bool	copy_ctor(dict *dict, void **copy, size_t size)
 {

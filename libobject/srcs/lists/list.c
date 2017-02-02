@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "list_design.h"
 
 static void	go_to_pos_in_list(t_list_data **list, t_list_data **tmp,

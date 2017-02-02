@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
 #include "string_design.h"
-#include "utils.h"
 
 int		_string_insert_at(Object *string, void *data, int pos)
 {

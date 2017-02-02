@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "string_design.h"
-#include "utils.h"
 
 static int	_string_ctor(Object *self, va_list *args)
 {
