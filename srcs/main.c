@@ -21,17 +21,10 @@ int		main(int ac, char **av, char **env)
   builtin_unsetenv((char *[]){"_", "SECURITYSESSIONID", NULL});
   printf("after unsetenv\n");
   builtin_env();
+  sh->in = sh->stdin->getline(sh->stdin);
+  if (sh->in)
+    printf("[%s]\n", sh->in);
   delete(sh);
-
-  printf("toto\n");
-  t_container      *string = new(_string, "filename.c", 0);
-
-  t_container *substring = string->sub(string, _array, -2, 5); // Returns ".c"
-  substring->dump(substring, "affiche c chien d'infidèle", _string_basic_print, "");
-  string->sub(string, _array, 3, 4); // Returns "enam"
-
-  string = substring->convert(substring, _string);
-  string->dump(string, "converted array to string: .c", _string_basic_print, "");
   (void)ac;
   (void)av;
   return (0);

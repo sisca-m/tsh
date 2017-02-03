@@ -13,3 +13,9 @@ t_bool	builtin_unsetenv(char **args)
     }
   return (TRUE);
 }
+
+
+t_bool	wrapper_builtin_unsetenv(char **args)
+{
+  return (builtin_unsetenv(args));
+}

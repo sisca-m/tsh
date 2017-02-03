@@ -10,3 +10,8 @@ t_bool	builtin_setenv(char **args)
   sh->env = new_env;
   return (TRUE);
 }
+
+t_bool	wrapper_builtin_setenv(char **args)
+{
+  return (builtin_setenv(args));
+}
