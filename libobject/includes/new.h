@@ -9,7 +9,9 @@
 #include "bool.h"
 
 /**
- * @brief Instanciate a Class
+ * @func_prototype new
+ *
+ * Instanciate a Class
  *
  * Create a memory allocated object by copying the value of the given class
  * then call the constructor of the object.
@@ -26,7 +28,9 @@
 void	*new(Class *class, ...);
 
 /**
- * @brief Delete an object
+ * @func_prototype delete
+ *
+ * Delete an object
  *
  * Call the destructor of the given Object then release the memory which has been
  * allocated by a call to new().

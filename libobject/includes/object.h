@@ -30,7 +30,7 @@ typedef int (*ctor_t)(Object *self, va_list *args);
 typedef void (*dtor_t)(Object *self, va_list *args);
 
 /**
- * @typedef Base class
+ * @class Base class
  *
  * This is the base class whose all others classes must inherit.
  * Since the notion of class is implemented through structures and compile
@@ -43,7 +43,7 @@ typedef void (*dtor_t)(Object *self, va_list *args);
  *
  * @field __name__
  * Name of the downmost class. The name is currently not used anywhere.
- * 
+ *
  * @field __init__
  * Constructor of the downmost class. Used in new
  *
