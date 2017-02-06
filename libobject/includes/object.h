@@ -4,15 +4,7 @@
 # include <sys/types.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include "bool.h"
-
-/**
- * @typedef Object
- *
- * Typedef to increase the semantic of the code.
- * It represents an instance of any class.
- */
-typedef void Object;
+# include "libobject_types.h"
 
 /**
  * @method Constructor
@@ -58,11 +50,11 @@ typedef void (*dtor_t)(Object *self, va_list *args);
  * @field __del__
  * Destructor of the downmost class. Used in delete
  */
-typedef struct {
+struct		Class {
   const size_t	__size__;
   const char	*__name__;
   ctor_t	__init__;
   dtor_t	__del__;
-} Class;
+};
 
 #endif /* !OBJECT_H_ */

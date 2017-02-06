@@ -1,49 +1,9 @@
 #ifndef CONTAINER_DESIGN_H_
 # define CONTAINER_DESIGN_H_
 
-/**
- * @typedef Container class
- */
-typedef struct s_container	t_container;
-
-/**
- * @typedef Array class
- */
-typedef struct s_Array		t_Array;
-
-/**
- * @typedef List class
- */
-typedef struct s_list		t_list;
-
-/**
- * @typedef String class
- */
-typedef struct s_String		t_String;
-
-/**
- * @typedef Iterator class
- */
-typedef struct s_iter		t_iterator;
-
-/**
- * @typedef Iterator class - For smaller type
- */
-typedef t_iterator	t_it;
-
-/**
- * @typedef Map class;
- */
-typedef struct s_dict	dict;
-
-/**
- * @typedef Filestream class;
- */
-typedef struct s_filestream	filestream;
-
 # include <stddef.h>
+# include "libobject_types.h"
 # include "new.h"
-# include "object.h"
 # include "bool.h"
 # include "utils.h"
 

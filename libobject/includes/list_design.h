@@ -4,14 +4,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "container_design.h"
+# include "libobject_types.h"
 # include "array_design.h"
 
 /**
- * @brief List class
+ * @brief List structure
  *
- * Inherits of the #t_container class.
- * The value contained in t_container#contained for the List class is
- * a <tt>#t_list_data *</tt> which represents a linked-list.
+ * Inherits of the t_container class.
  */
 struct		s_list {
   t_container	base;
@@ -29,44 +28,9 @@ typedef struct		s_list_data
   struct s_list_data	*next;
 }			t_list_data;
 
-/**
- * @brief No circular simple linked-list
- */
-typedef t_list	t_spl_list;
-
-/**
- * @brief Circular simple linked-list
- */
-typedef t_list	t_spl_clist;
-
-/**
- * @brief No ircular doubly linked-list
- */
-typedef t_list	t_dbl_list;
-
-/**
- * @brief Circular doubly linked-list
- */
-typedef t_list	t_dbl_clist;
-
-/**
- * @brief No circular simple linked-list description variable
- */
 extern Class	*_spl_list;
-
-/**
- * @brief Circular simple linked-list description variable
- */
 extern Class	*_spl_clist;
-
-/**
- * @brief No circular doubly linked-list description variable
- */
 extern Class	*_dbl_list;
-
-/**
- * @brief Circular doubly linked-list description variable
- */
 extern Class	*_dbl_clist;
 
 /**
