@@ -1,9 +1,8 @@
 #ifndef LOBJECT_H_
 # define LOBJECT_H_
 
-# include "bool.h"
-# include "new.h"
 # include "object.h"
+# include "new.h"
 # include "container_design.h"
 # include "string_design.h"
 # include "array_design.h"
