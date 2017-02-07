@@ -122,11 +122,6 @@ struct		s_String {
   t_str_split	split;
 };
 
-/**
- * @brief String class description variable
- */
-extern Class	*_string;
-
 int	_string_insert_at(Object *self, void *data, int pos);
 int	_string_delete_at(Object *self, int pos);
 int	_string_erase(Object *self);
@@ -142,5 +137,6 @@ Object	*_string_back(Object *self);
 Object	*_string_at(Object *self, size_t pos);
 
 /*Object	*string_substr(Object *self, Class *type, int begin, int len);*/
+extern Class	*_string;
 
 #endif /* !STRING_DESIGN_H_ */

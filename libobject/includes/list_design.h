@@ -42,11 +42,6 @@ struct		s_list {
   t_container	base;
 };
 
-extern Class	*_spl_list;
-extern Class	*_spl_clist;
-extern Class	*_dbl_list;
-extern Class	*_dbl_clist;
-
 /**
  * Refer to container_design.h to see which methods the following functions implement.
  */
@@ -73,5 +68,10 @@ int	_dbl_list_del(Object *list, int pos);
 
 int	_dbl_clist_add(Object *list, void *data, int pos);
 int	_dbl_clist_del(Object *list, int pos);
+
+extern Class	*_spl_list;
+extern Class	*_spl_clist;
+extern Class	*_dbl_list;
+extern Class	*_dbl_clist;
 
 #endif /* !LIST_DESIGN_H_ */

@@ -26,8 +26,6 @@ struct		s_Array {
   t_container	base;
 };
 
-extern Class	*_array;
-
 /**
  * Refer to container_design.h to see which methods the following functions implement.
  */
@@ -43,5 +41,7 @@ void	array_basic_print(size_t i, Object *elem, const char *prefix);
 Object	*_array_front(Object *self);
 Object	*_array_back(Object *self);
 Object	*_array_at(Object *self, size_t pos);
+
+extern Class	*_array;
 
 #endif /* !ARRAY_DESIGN_H_ */

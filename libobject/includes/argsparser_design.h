@@ -68,6 +68,47 @@ typedef t_container	*(*t_arg_consume)(t_opt *opt, t_argsparser *p,
 t_container		*_consume_args(t_opt *opt, t_argsparser *p,
 				       t_container *ctn);
 
+/**
+ * @class Option class
+ *
+ * Inherits of the base class.
+ *
+ * @field base
+ * The base class.
+ *
+ * @field prefix
+ * The prefix of the option, usually - with the gnu binaries
+ *
+ * @field opt
+ * The name of the option, h for example in -h
+ *
+ * @field vdefault
+ * The default value of the option, can be NULL if there isn't any
+ *
+ * @field nargs
+ * The number of arguments the options has. See also the nargs macros above to handle the special cases.
+ *
+ * @field nb_repet
+ * The number of times the option has to repeat itself. NO_REPET if the option shouldn't be repeated.
+ *
+ * @field optional
+ * OPTIONAL_OPT if the option can be omit, MANDATORY_OPT otherwise.
+ *
+ * @field compound
+ * COMPOUND if the first argument has to be given separated from the option name by a = , ./foo --debug=true for example. It does allow multiple arguments though: ./foo "--arguments=foo bar". SEPARATE in the other case.
+ *
+ * @field is_positionnal
+ * Refer to the typedef t_test_arg documentation
+ *
+ * @field is_kwarg
+ * Refer to the typedef t_test_arg documentation
+ *
+ * @field match
+ * Refer to the typedef t_opt_match documentation
+ *
+ * @field consume
+ * Refer to the typedef t_arg_consume documentation
+ */
 struct		s_opt {
   Class		base;
   char		*help;
@@ -83,10 +124,6 @@ struct		s_opt {
   t_opt_match	match;
   t_arg_consume	consume;
 };
-
-/**
- * @brief Argsparse methods and class
- */
 
 /**
  * @typedef Function pointer which represents a member function adding an option to an argsparser
@@ -154,7 +191,7 @@ t_bool		_set_defaults(t_argsparser *p, dict *res);
  *
  * @field opts
  * A dict storing the informations of the options added to the parser via the add_opt method
- * 
+ *
  * @field args
  * The data on which the parsing will be executed. Typically the char **av of the main function
  *
