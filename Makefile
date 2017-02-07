@@ -7,7 +7,7 @@ OBJDIR	=	build
 LIB	=	libobject.a
 LIBDIR	=	libobject
 
-CFLAGS	=	-Wall -Wextra -pedantic -g3
+CFLAGS	=	-Wall -Wextra -g3
 CFLAGS	+=	-I./srcs/includes/	\
 		-I./$(LIBDIR)/includes/
 LDFLAGS	+=	-L$(LIBDIR) -lobject

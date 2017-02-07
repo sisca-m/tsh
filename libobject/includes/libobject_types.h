@@ -78,4 +78,14 @@ typedef struct s_dict	dict;
  */
 typedef struct s_filestream	filestream;
 
+/**
+ * @typedef Argparser class;
+ */
+typedef struct s_argsparser	t_argsparser;
+
+/**
+ * @typedef Option class;
+ */
+typedef struct s_opt	t_opt;
+
 #endif /* !LIBOBJECT_TYPES_H_ */

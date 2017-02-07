@@ -3,31 +3,34 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include "object.h"
 # include "container_design.h"
-# include "list_design.h"
 
+/**
+ * Macro telling to fully copy the ptr** given to the constructor
+ * @code
+ * t_array = new(_array, (char *[]){"toto", "titi", NULL}, COPY_ALL, 0);
+ * @code
+ */
 # define COPY_ALL	0
 
 /**
- * @brief Array class
+ * @class Array class
  *
- * Inherits of the #t_container class.
- * The value contained in t_container#contained for the Array class is
- * a void ** which represents a table of whatever type.
+ * Inherits of the container class.
+ * The value contained in t_container.contained is a void ** which represents a table of any type.
+ *
+ * @field base
+ * The base class is a container, the fact that containers inherit of the t_class allow us to do that.
  */
 struct		s_Array {
-  /**
-   * @brief Inheritance of #t_container
-   */
   t_container	base;
 };
 
-/**
- * @brief Array description variable
- */
 extern Class	*_array;
 
+/**
+ * Refer to container_design.h to see which methods the following functions implement.
+ */
 int	_array_insert_at(Object *self, void *data, int pos);
 int	_array_delete_at(Object *self, int pos);
 int	_array_erase(Object *self);

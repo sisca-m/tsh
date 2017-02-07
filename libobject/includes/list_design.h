@@ -8,13 +8,14 @@
 # include "array_design.h"
 
 /**
- * @brief List structure
- *
- * Inherits of the t_container class.
+ * @enum Type of linked-list. Used internally in lists functions.
  */
-struct		s_list {
-  t_container	base;
-};
+typedef enum	e_list_type {
+  SIMPLE = 0,
+  CIRC_SIMPLE,
+  DOUBLE,
+  CIRC_DOUBLE
+}		t_list_type;
 
 /**
  * @brief Linked list structure
@@ -28,24 +29,27 @@ typedef struct		s_list_data
   struct s_list_data	*next;
 }			t_list_data;
 
+/**
+ * @class List class
+ *
+ * Inherits of the container class.
+ * The value contained in t_container.contained is a t_list_data *
+ *
+ * @field base
+ * The base class is a container, the fact that containers inherit of the t_class allow us to do that.
+ */
+struct		s_list {
+  t_container	base;
+};
+
 extern Class	*_spl_list;
 extern Class	*_spl_clist;
 extern Class	*_dbl_list;
 extern Class	*_dbl_clist;
 
 /**
- * @brief Type of linked-list. Used in interns functions.
+ * Refer to container_design.h to see which methods the following functions implement.
  */
-typedef enum	e_list_type {
-  SIMPLE = 0,
-  CIRC_SIMPLE,
-  DOUBLE,
-  CIRC_DOUBLE
-}		t_list_type;
-
-/*
-** Two base functions for add / del elem in a linked list
-*/
 int	list_add(t_list_data **list, void *data, int pos, t_list_type type);
 void	list_del(t_list_data **list, int pos, t_list_type type);
 

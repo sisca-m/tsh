@@ -197,11 +197,68 @@ Object		*_container_to_type(Object *self, Class *type);
 typedef Object	*(*t_sub)(Object *self, Class *type, int begin, int len);
 Object		*_container_sub(Object *self, Class *type, int begin, int len);
 
+/**
+ * @class Container class
+ *
+ * Inherits of the container class.
+ * The value contained in t_container.contained is a void ** which represents a table of any type.
+ *
+ * @field base
+ * The base class.
+ *
+ * @field contained
+ * The data contained, on which the methods will operate.
+ *
+ * @field contained_size
+ * An internal field used when dealing with the size of the contained data. External programs should use the size() method
+ *
+ * @field data
+ * Refer to the typedef t_data documentation
+ *
+ * @field size
+ * Refer to the typedef t_size documentation
+ *
+ * @field empty
+ * Refer to the typedef t_empty documentation
+ *
+ * @field insertAt
+ * Refer to the typedef t_rand_insert documentation
+ *
+ * @field push_back
+ * Refer to the typedef t_insert documentation
+ *
+ * @field deleteAt
+ * Refer to the typedef t_rand_delete documentation
+ *
+ * @field erase
+ * Refer to the typedef t_delete documentation
+ *
+ * @field affect
+ * Refer to the typedef t_affect documentation
+ *
+ * @field front
+ * Refer to the typedef t_access documentation
+ *
+ * @field back
+ * Refer to the typedef t_access documentation
+ *
+ * @field at
+ * Refer to the typedef t_rand_access documentation
+ *
+ * @field dump
+ * Refer to the typedef t_dump documentation
+ *
+ * @field convert
+ * Refer to the typedef t_converter documentation
+ *
+ * @field sub
+ * Refer to the typedef t_sub documentation
+ */
 struct		s_container
 {
   Class		base;
 
-  Object	*contained;
+  void		*contained;
 
   size_t	contained_size;
   t_data	data;

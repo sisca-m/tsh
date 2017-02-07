@@ -25,6 +25,7 @@ int		main(int ac, char **av, char **env)
   if (sh->in)
     printf("[%s]\n", sh->in);
   delete(sh);
+
   (void)ac;
   (void)av;
   return (0);
